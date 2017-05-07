@@ -7,18 +7,20 @@ local LED_PIN1 = 4
     wifi.ap.config(cfg)  
 
  
- err=0  
- cold=1  
+ --err=0  
+ --cold=1  
  
  
  s=net.createServer(net.UDP)   
  s:on("receive",function(s,c)  
-   print("Sequence="..c.." Previous:"..cold)  
+   --print("Sequence="..c.." Previous:"..cold)
+   --print("Client nb: et value "..c)  
+   print(c)  
    
    
- if ((cold+1)~=tonumber(c)) then  
-   err=err+1  
-   end  
+  --   if ((cold+1)~=tonumber(c)) then  
+  --      err=err+1  
+  --   end  
    
      if (sw1) then  
        gpio.write(LED_PIN1, gpio.LOW)  
